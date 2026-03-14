@@ -17,11 +17,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                scp -i /home/ubuntu/app_kp.pem /var/lib/jenkins/workspace/web_app/target/web-app.war ubuntu@13.49.175.19:/var/lib/tomcat10/webapps/ 
-                ssh -i app_kp.pem ubuntu@13.49.175.19 "sudo systemctl restart tomcat10"
-                '''
-            }
-        }
+                    scp -i /var/lib/jenkins/app_kp.pem \/var/lib/jenkins/workspace/web_app/target/web-app.war \ubuntu@13.49.175.19:/var/lib/tomcat10/webapps/
+        '''
+    }
+}
     }
 }
 
