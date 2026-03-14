@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                 scp -i app_kp.pem /var/lib/jenkins/workspace/web_app/target/web-app.war ec2-user@13.49.175.19:/var/lib/tomcat10/webapps/ 
-                ssh -i app_kp.pem ubuntu@13.49.175.19 "sudo systemctl restart tomcat"
+                ssh -i app_kp.pem ubuntu@13.49.175.19 "sudo systemctl restart tomcat10"
                 '''
             }
         }
